@@ -1,0 +1,7 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fff;
+    background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAANUlEQVQ4jWM8c+bMfwY8wNjYmBGfPBM+SWLAqAGDwQDG///xJgOGs2fP4lUw8F4YNYAKBgAA2NYKfxDn4ZUAAAAASUVORK5CYII=);
+    overflow: hidden;
+}

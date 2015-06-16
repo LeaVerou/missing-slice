@@ -1,0 +1,808 @@
+#for-browser {
+	background: #333;
+	background-image: linear-gradient(to left, black, black);
+	background-repeat: no-repeat;
+	background-size: 1280px 720px;
+}
+
+#intro {
+	background-image: url(img/cover.jpg);
+	background-position: left;
+	background-size: cover;
+}
+
+	#intro h1 {
+		width: 5em;
+		margin: 1.2em 0 0 0;
+		text-align: left;
+		font-size: 450%;
+		line-height: .8;
+		letter-spacing: -.05em;
+	}
+	
+	#intro h2 {
+		width: 8em;
+		margin: .4em 0 0;
+		font-size: 160%;
+		line-height: 1;
+		color: black;
+		letter-spacing: -.05em;
+		position: absolute;
+		right: 0;
+		bottom: .8em;
+		transform-origin: bottom right;
+		transform: rotate(90deg) translateY(2.5em);
+		text-align: right;
+	}
+	
+	#intro .attribution {
+		position: absolute;
+		bottom: -.5em;
+		color: white;
+		font-size: 80%;
+		mix-blend-mode: difference;
+	}
+	
+		#intro .attribution a {
+			text-decoration: none;
+		}
+
+#hi {
+	padding: 1vmin;
+	background: hsl(336, 100%, 50%);
+	font-size: 200%;
+}
+	
+	#hi .delayed:not(.current):not(.displayed),
+	#csswg-announcement .delayed:not(.current):not(.displayed),
+	#contact.delayed:not(.current):not(.displayed) {
+		transform: translateY(-100vh);
+	}
+	
+	#hi .displayed {
+		opacity: 1;
+	}
+	
+	#hi p:first-of-type {
+		margin-top: .1em;
+	}
+
+	#hi p {
+		margin: 0;
+		padding-top: .5em;
+		font: 220%/1 'Reenie Beanie', sans-serif;
+	}
+	
+	#hi div > p {
+		padding-top: 0;
+	}
+	
+	#hi > p {
+		font-size: 160%;
+	}
+	
+		/*#hi p img {
+			display: block;
+			height: 2.5em;
+			margin-top: -.3em;
+		}*/
+
+	#hi figure {
+		float: left;
+		margin: 1.5em 1.5em 0 1em;
+		max-width: 540px;
+		display: inline-block;
+		background: white;
+		padding: 15px;
+		box-shadow: 2px 2px 30px black;
+		transform: rotate(-2deg);
+	}
+	
+		#hi figure img {
+			max-width: 100%;
+		}
+		
+		#hi figure figcaption {
+			display: block;
+			padding-bottom: .1em;
+			text-align: center;
+			color: black;
+			text-shadow: none;
+			font: 300%/.7 'Reenie Beanie', cursive;
+			
+		}
+	
+		#hi figure img {
+			background: url(img/grass.svg), url(img/starburst.svg), linear-gradient(hsl(200, 84%, 85%), hsl(200, 84%, 90%));
+			background-position: 50% 200px, 0 -100px, 0 0;
+			background-repeat: repeat-x, no-repeat;
+			background-size: auto, 100% auto;
+		}
+	
+	#hi ul {
+		line-height: 1.7;
+		margin: 0;
+	}
+	
+		#hi li {
+			display: inline;
+		}
+		
+			#hi li:before {
+				content: none;
+			}
+			
+			#hi li a {
+				display: inline-block;
+				padding: .2em .3em .25em;
+				border-radius: .2em;
+				line-height: 1;
+				text-decoration: none;
+				background: black;
+			}
+			
+			#hi li a:not(:hover) {
+				color: hsl(336, 100%, 95%);
+			}
+		
+	#csswg {
+		
+	}
+	
+		#csswg strong {
+			display: block;
+			color: white;
+			font: bold 125% Helvetica Neue, sans-serif;
+		}
+		
+	#oreilly {
+		float: right;
+		margin-top: -13em;
+		margin-right: 1em;
+		box-shadow: 1px 1px #aab, 2px 2px #bbc, 3px 3px #99a, 4px 4px #aab, 5px 5px #889, 6px 6px #99a, 7px 7px #778, 8px 8px #889,
+		            8px 8px 10px rgba(0,0,0,.6);
+	}
+
+	@media (max-width: 1279px) {
+		#oreilly {
+			margin-top: -3.6em;
+		}
+	}
+
+	p#mit {
+		display: inline-block;
+		width: 6em;
+		padding-top: 1em;
+	}
+		
+		#mit img {
+			display: block;
+			width: 80%;
+			margin-bottom: .2em;
+		}
+
+#pee .pie {
+	display: inline-block;
+	position: relative;
+	width: 1em;
+	height: 1em;
+	border-radius: 50%;
+	background: yellowgreen;
+	background-image: linear-gradient(to right, transparent 50%, currentColor 0);
+	color: #655;
+	text-align: center;
+	font-size: 100px;
+}
+
+@keyframes spin {
+	to { transform: rotate(.5turn); }
+}
+@keyframes bg {
+	50% { background: currentColor; }
+}   
+
+#pee .pie::before {
+	content: '';
+	position: absolute;
+	top: 0; left: 50%;
+	width: 50%; height: 100%;
+	border-radius: 0 100% 100% 0 / 50%;
+	background-color: inherit;
+	transform-origin: left;
+	animation: spin 50s linear infinite, bg 100s step-end infinite;
+	animation-play-state: paused;
+	animation-delay: inherit;
+}
+
+#pee {
+	color: white;
+}
+
+#pee:target {
+	color: black;
+	transition: 15s 10s;
+	transition-property: color, opacity;
+}
+
+	.legend {
+		margin: 2em auto;
+		width: fit-content;
+		transition: inherit;
+		transition-property: opacity;
+	}
+
+	#pee:not(:target) .legend {
+		opacity: 0;
+	}
+
+		.legend p {
+			margin: 0;
+		}
+
+		.legend p::before {
+			content: "";
+			display: inline-block;
+			width: .8em;
+			height: .8em;
+			margin-right: .4em;
+			border-radius: .3em;
+			
+			background: gold;
+		}
+
+	#pee .points {
+		display: flex;
+		justify-content: space-between;
+	}
+
+	#pee p.axis {
+		position: relative;
+		border-top: 2px solid;
+		margin-top: 1em;
+		font-weight: bold
+	}
+
+		#pee p.axis::before {
+			content: "▶";
+			position: absolute;
+			right: -.3em;
+			top: -.55em;
+			line-height: 1;
+			font-size: 60%;
+			transform: scaleY(.5);
+		}
+
+	#pee .point {
+		text-align: center;
+		font-size: 80%;
+	}
+
+	#pee .pie {
+		display: block;
+		margin: auto;
+		background-color: #f06;
+		color: gold;
+		font-size: 15vw;
+		margin-bottom: 1rem;
+	}
+
+	#pee .pie,
+	#pee .legend p:first-of-type::before {
+		background-color: #f06;
+	}
+
+.tasty .pie {
+	width: 10em;
+	height: 10em;
+}
+
+.tasty .pie + .pie {
+	transform: scale(.55);
+	transform-origin: top;
+	margin: 1em 0 0 0;
+}
+
+[id=svg] .pie {
+	width: 10em;
+	height: 10em;
+}
+
+#static-interpolation:target {
+	display: flex;
+	justify-content: space-between;
+}
+
+#static-interpolation div {
+	width: 5em;
+	height: 5em;
+}
+
+.subject {
+	position: relative;
+	z-index: 1;
+}
+
+.subject::before,
+.subject::after {
+	display: block;
+}
+
+.slide:not(.tasty) > svg.pie {	
+	overflow: visible;
+	background: #f06;
+	border-radius: 50%;
+	transform: rotate(-.25turn);
+}
+
+.slide:not(.tasty) > svg.pie circle {
+	fill: none;
+	stroke-width: 32;
+}
+
+.pie-slide .pie {
+	width: 65vh;
+	height: 65vh;
+}
+
+	.pie-slide .legend {
+		float: right;
+		margin: 0;
+		max-width: 10em;
+		font-size: 220%;
+	}
+
+	.pie-slide .legend p:nth-of-type(1)::before {
+		background: yellowgreen;
+	}
+
+	.pie-slide .legend p:nth-of-type(3)::before {
+		background: #f06;
+	}
+
+.eval-aspects.slide {
+	font-size: 300%;
+}
+
+	.eval-aspects.slide h1 {
+		font-weight: 100;
+		font-size: 400%;
+	}
+
+	.eval-aspects.slide ul {
+		padding: 0;
+		list-style: none;
+		text-align: center;
+		font-weight: bold;
+	}
+
+.eval.slide {
+
+}
+	
+	.eval-overall h1,
+	.eval.slide h1 {
+		text-align: left;
+		font-weight: 100;
+		font-size: 260%;
+	}
+
+		.eval.slide h1::before,
+		.eval-overall h1::before {
+			display: block;
+			font-size: 50%;
+			font-weight: bold;
+		}
+
+	.eval.slide ul {
+		list-style: none;
+		padding: 0;
+		font-weight: bold;
+	}
+
+		.eval.slide li::before {
+			margin-right: .3em;
+			font: 100% sans-serif;
+		}
+
+		.good::before {
+			content: "😄";
+		}
+
+		.super.good::before {
+			content: "😄😄😄";
+		}
+
+		.ok::before {
+			content: "😑";
+		}
+
+		.bad::before {
+			content: "💩";
+		}
+
+.eval-overall {
+	background: linear-gradient(to right, yellowgreen 33.3%, gold 0, gold 66.6%, #f06 0) no-repeat white;
+	background-size: 100% 2.1em;
+}
+
+	.eval-overall h1::before {
+		content: "Overall";
+		color: white;
+	}
+
+	.eval-overall p {
+		margin: 0;
+		text-align: center;
+		font-size: 600%;
+	}
+
+#evaluation-flexibility,
+.flexibility.slide {
+	background: yellowgreen;
+	color: white;
+}
+
+#evaluation-extensibility,
+.extensibility.slide {
+	background: gold;
+}
+
+#evaluation-maintainability,
+.maintainability.slide {
+	background: #f06;
+	color: white;
+}
+
+	.flexibility.slide h1::before {
+		content: "Flexibility";
+	}
+
+	.extensibility.slide h1::before {
+		content: "Extensibility";
+	}
+
+	.maintainability.slide h1::before {
+		content: "Maintainability";
+	}
+
+.evaluation.slide {
+	padding: 0;
+}
+
+.evaluation.slide:target {
+	display: flex;
+}
+
+	.evaluation.slide article {
+		flex: 1;
+		padding: .8em .5em;
+		box-sizing: border-box;
+		overflow: hidden;
+		color: white;
+		font-weight: 300;
+		line-height: normal;
+		transition: .5s flex;
+	}
+
+	.evaluation.slide article.delayed:not(.displayed):not(.current) {
+		opacity: 1;
+		flex: .01;
+	}
+
+	.evaluation.slide article:first-of-type {
+		background: hsl(80, 80%, 45%);
+	}
+
+		.evaluation.slide article:first-of-type li::before {
+			content: "✓";
+		}
+
+	.evaluation.slide article:nth-of-type(2) {
+		background: hsl(35, 100%, 48%);
+		border: solid white;
+		border-width: 0 2px;
+	}
+
+	.evaluation.slide article:nth-of-type(3) {
+		background: hsl(0, 100%, 40%);
+	}
+
+		.evaluation.slide article > h1 {
+			margin: 0;
+			text-align: center;
+			font-size: 220%;
+			font-weight: 100;
+			line-height: 1;
+			color: rgba(0,0,0,.8);
+		}
+
+		.evaluation.slide article > ul {
+
+		}
+
+			.evaluation.slide article li {
+				position: relative;
+				margin: .5em 0;
+				list-style-type: none;
+			}
+
+				.evaluation.slide article li::before {
+					content: "✘";
+					color: black;
+					position: absolute;
+					top: 0;
+					right: calc(100% + .2em);
+				}
+
+.tooltip {
+	display: none;
+	position: absolute;
+	z-index: 100;
+	max-width: 90vw;
+	padding: 1em;
+	border: 1px solid rgba(0,0,0,.2);
+	border-radius: .5em;
+	box-shadow: .1em .1em 1em rgba(0,0,0,.5);
+	overflow: auto;
+	background: white;
+	font-size: 90%;
+}
+
+@keyframes show { 
+	from {
+		opacity: .3;
+	}
+}
+
+.tooltip.active {
+	display: block;
+	animation: show .4s;
+}
+
+	.tooltip > code {
+		white-space: pre-wrap;	
+	}
+
+#conic-test {
+
+}
+
+	#conic-test .pie {
+		margin: auto;
+		width: 0;
+		height: 0;
+	}
+
+.comment {
+	color: red;
+	font-family: 'Reenie Beanie', sans-serif;
+	font-weight: normal;
+}
+
+footer.slide {
+	text-align: center;
+	padding-top: 1em;
+}
+	
+	footer.slide h1 {
+		margin-top: 0;
+	}
+
+	footer.slide > ul {
+		margin: auto;
+		width: 6em;
+		color: #f06;
+		text-align: left;
+	}
+	
+		footer.slide > ul a {
+			color: white;
+			text-decoration: none;
+		}
+
+#csswg-composition:not(:target) circle {
+	stroke-dashoffset: 0;
+}
+
+#csswg-composition {
+
+}
+
+	#csswg-composition .legend {
+		margin: 1em;
+		font-size: 140%;
+	}
+
+		#csswg-composition .legend p {
+			white-space: nowrap;
+		}
+	
+	#csswg-composition circle {
+		transition: 1s cubic-bezier(.2,.7,.5,1.4);
+		transition-property: stroke-dasharray, stroke-dashoffset;
+	}
+
+	#csswg-composition:not(:target) circle {
+		stroke-dasharray: 0 100;
+	}
+
+.slide.browser-support {
+
+}
+
+	.slide.browser-support h1 {
+		font-weight: 100;
+	}
+
+		.slide.browser-support h1 strong {
+			display: block;
+			font-size: 150%;
+		}
+
+	div.browser-support {
+		text-align: center;
+		margin-bottom: 2em;
+	}
+		
+		.browser-support > dfn {
+			position: relative;
+			margin: 110px 0 0 110px;
+			display: inline-block;
+			min-width: 1em;
+			padding: .4em;
+			border: .2em solid transparent;
+			text-align: center;
+			font-size: 70%;
+			font-style: normal;
+			line-height: 1;
+			font-weight: 200;
+		}
+		
+		.browser-support > dfn:empty {
+			opacity: .5;
+			filter: url(img/blur.svg#blur);
+			filter: blur(5px);
+		}
+		
+		.browser-support > dfn:not(:empty) {
+			border-color: white;
+			background: yellowgreen;
+			background-image: linear-gradient(transparent, rgba(0,0,0,.5));
+			color: white;
+			border-radius: 2em;
+			box-shadow: 0 3.8em 0 -3em hsla(0,0%,100%,.2) inset, .1em .1em .3em black;
+		}
+		
+		.browser-support > dfn.partial {
+			background-color: #f90;
+		}
+		
+			.browser-support > dfn:empty:after {
+				content: '\a0';
+			}
+		
+			.browser-support > dfn:before {
+				position: absolute;
+				bottom: -10px;
+				right: -5px;
+				z-index: -1;
+				width: 150px;
+				height: 150px;
+				background: no-repeat center;
+			}
+			
+			.browser-support > dfn.unreleased:before {
+				opacity: .5;
+			}
+			
+			.browser-support > dfn[title="firefox"]:before {
+				content: url(img/firefox-logo.png);
+			}
+			
+			.browser-support > dfn[title="opera"]:before {
+				content: url(img/opera-logo.png);
+			}
+			
+			.browser-support > dfn[title="ie"]:before {
+				content: url(img/ie-logo.png);
+			}
+			
+			.browser-support > dfn[title="chrome"]:before {
+				content: url(img/chrome-logo.png);
+			}
+			
+			.browser-support > dfn[title="safari"]:before {
+				content: url(img/safari-logo.png);
+			}
+
+#comeon {
+	background-image: url(img/please.jpg);
+	background-position: top;
+}
+
+	#comeon div {
+		position: absolute;
+		top: 0;
+		right: 0;
+		color: white;
+		text-align: right;
+		padding: .5em 1em;
+		font-weight: bold;
+	}
+
+	#comeon p {
+		margin: 0;
+	}
+
+#tufte {
+
+}
+
+	#tufte blockquote p:first-of-type {
+		position: relative;
+	}
+
+	#tufte blockquote p:first-of-type::before {
+		position: absolute;
+		font-size: 200%;
+		font-weight: bold;
+		color: gold;
+		line-height: 1;
+		content: '“';
+		top: 0;
+		right: 100.5%;
+	}
+
+.pie-bar.slide {
+	text-align: center;
+}
+
+	.pie-bar.slide > div:first-of-type {
+		margin-bottom: 1.5em;
+	}
+
+	.conic-pie,
+	.bar-chart {
+		display: inline-block;
+		vertical-align: bottom;
+		width: 7em;
+		height: 7em;
+		margin: 0 2em;
+	}
+
+	.conic-pie {
+		border-radius: 50%;
+		background: center / 100% 100%;
+	}
+
+	.bar-chart {
+		line-height: 7em;
+	}
+
+		.bar-chart > div {
+			display: inline-block;
+			vertical-align: bottom;
+			width: 1em;
+			background: gold;
+			height: 100%;
+		}
+
+#epilogue {
+	background-image: url(img/whole-pie.jpg);
+	background-position: top;
+	transition: 2s background;
+}
+
+#epilogue:target {
+	background-position: bottom;
+}
+
+	#epilogue h1 {
+		background: none;
+		bottom: .1em;
+		transition: 2s 2.5s opacity;
+	}
+
+	#epilogue:not(:target) h1 {
+		opacity: 0;
+	}
