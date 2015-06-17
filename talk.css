@@ -1,8 +1,8 @@
 #for-browser {
 	background: #333;
-	background-image: linear-gradient(to left, black, black);
+	background-image: linear-gradient(to left, rgba(0,0,0,.5), rgba(0,0,0,.5)), linear-gradient(to left, rgba(0,0,0,.5), rgba(0,0,0,.5));
 	background-repeat: no-repeat;
-	background-size: 1280px 720px;
+	background-size: 1280px 720px, 1024px 768px;
 }
 
 #intro {
@@ -12,8 +12,10 @@
 }
 
 	#intro h1 {
+		position: absolute;
+		bottom: .2em;
 		width: 5em;
-		margin: 1.2em 0 0 0;
+		margin: 0;
 		text-align: left;
 		font-size: 450%;
 		line-height: .8;
@@ -90,7 +92,7 @@
 	#hi figure {
 		float: left;
 		margin: 1.5em 1.5em 0 1em;
-		max-width: 540px;
+		max-width: 45vw;
 		display: inline-block;
 		background: white;
 		padding: 15px;
@@ -100,6 +102,7 @@
 	
 		#hi figure img {
 			max-width: 100%;
+			object-fit: cover;
 		}
 		
 		#hi figure figcaption {
@@ -109,7 +112,6 @@
 			color: black;
 			text-shadow: none;
 			font: 300%/.7 'Reenie Beanie', cursive;
-			
 		}
 	
 		#hi figure img {
@@ -156,17 +158,11 @@
 		}
 		
 	#oreilly {
-		float: right;
-		margin-top: -13em;
-		margin-right: 1em;
+		position: absolute;
+		right: 4vmin;
+		bottom: 4vmin;
 		box-shadow: 1px 1px #aab, 2px 2px #bbc, 3px 3px #99a, 4px 4px #aab, 5px 5px #889, 6px 6px #99a, 7px 7px #778, 8px 8px #889,
 		            8px 8px 10px rgba(0,0,0,.6);
-	}
-
-	@media (max-width: 1279px) {
-		#oreilly {
-			margin-top: -3.6em;
-		}
 	}
 
 	p#mit {
@@ -181,37 +177,25 @@
 			margin-bottom: .2em;
 		}
 
-#pee .pie {
-	display: inline-block;
-	position: relative;
-	width: 1em;
-	height: 1em;
-	border-radius: 50%;
-	background: yellowgreen;
-	background-image: linear-gradient(to right, transparent 50%, currentColor 0);
-	color: #655;
-	text-align: center;
-	font-size: 100px;
-}
+@media (max-width: 1024px) {
+	#hi {
+		font-size: 180%;
+	}
 
-@keyframes spin {
-	to { transform: rotate(.5turn); }
-}
-@keyframes bg {
-	50% { background: currentColor; }
-}   
+	#hi figure {
+		height: 84vh;
+	}
 
-#pee .pie::before {
-	content: '';
-	position: absolute;
-	top: 0; left: 50%;
-	width: 50%; height: 100%;
-	border-radius: 0 100% 100% 0 / 50%;
-	background-color: inherit;
-	transform-origin: left;
-	animation: spin 50s linear infinite, bg 100s step-end infinite;
-	animation-play-state: paused;
-	animation-delay: inherit;
+	#hi figure img {
+		width: 100%;
+		height: calc(100% - 2.5em);
+	}
+
+	#oreilly {
+		right: 45vmin;
+		bottom: 10vh;
+		outline: 100vmax solid rgba(0,0,0,.5);
+	}
 }
 
 #pee {
@@ -223,6 +207,14 @@
 	transition: 15s 10s;
 	transition-property: color, opacity;
 }
+	
+	#pee .pie {
+		display: inline-block;
+		position: relative;
+		width: 1em;
+		height: 1em;
+		border-radius: 50%;
+	}
 
 	.legend {
 		margin: 2em auto;
@@ -296,6 +288,13 @@
 	height: 10em;
 }
 
+@media (max-width: 1024px) {
+	.tasty .pie {
+		width: 9em;
+		height: 9em;
+	}
+}
+
 .tasty .pie + .pie {
 	transform: scale(.55);
 	transform-origin: top;
@@ -348,7 +347,7 @@
 		float: right;
 		margin: 0;
 		max-width: 10em;
-		font-size: 220%;
+		font-size: 150%;
 	}
 
 	.pie-slide .legend p:nth-of-type(1)::before {
@@ -610,7 +609,7 @@ footer.slide {
 
 	#csswg-composition .legend {
 		margin: 1em;
-		font-size: 140%;
+		font-size: 90%;
 	}
 
 		#csswg-composition .legend p {
@@ -642,6 +641,7 @@ footer.slide {
 	div.browser-support {
 		text-align: center;
 		margin-bottom: 2em;
+		white-space: nowrap;
 	}
 		
 		.browser-support > dfn {
@@ -800,7 +800,13 @@ footer.slide {
 	#epilogue h1 {
 		background: none;
 		bottom: .1em;
-		transition: 2s 2.5s opacity;
+		xtransition: 2s 2.5s opacity;
+	}
+
+	@media (max-width: 1024px) {
+		#epilogue h1 {
+			font-size: 6.4vw;
+		}
 	}
 
 	#epilogue:not(:target) h1 {

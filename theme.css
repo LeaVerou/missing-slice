@@ -60,13 +60,22 @@ textarea {
 	background-attachment: local;
 	color: white;
 	line-height: 1.5;
-	
 }
 
 	textarea:not(.bottom) {
 		padding-left: calc(1em + 8rem);
 		box-shadow: .1em 0 .2em rgba(0,0,0,.3) inset;
 		font-size: 90%;
+	}
+
+	@media (max-width: 1024px) {
+		textarea:not(.bottom) {
+			width: 76%;
+			padding-left: calc(1em + 5rem);
+			font-size: 75%;
+			tab-size: 3;
+			overflow: auto;
+		}
 	}
 
 	textarea.bottom {
@@ -80,9 +89,15 @@ textarea {
 	}
 
 .slide {
-	padding: 5vmin 6vmin;	
+	padding: 5vmin;	
 	background-color: white;
 	color: black;
+}
+
+@media (max-width: 1024px) {
+	.slide {
+		padding: 3vmin;
+	}
 }
 
 	.slide[data-source]::after {
@@ -133,7 +148,7 @@ section > header.slide:target {
 }
 
 	section > header.slide > h1 {
-		margin: calc(45vh - .5em) auto;
+		margin: auto;
 		padding: .5em .7em;
 		background: black;
 		text-align: center;
