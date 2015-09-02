@@ -301,11 +301,6 @@
 	margin: 1em 0 0 0;
 }
 
-[id=svg] .pie {
-	width: 10em;
-	height: 10em;
-}
-
 #static-interpolation:target {
 	display: flex;
 	justify-content: space-between;
@@ -354,7 +349,7 @@
 		background: yellowgreen;
 	}
 
-	.pie-slide .legend p:nth-of-type(3)::before {
+	.pie-slide .legend p:nth-of-type(2)::before {
 		background: #f06;
 	}
 
@@ -421,7 +416,7 @@
 
 .eval-overall {
 	background: linear-gradient(to right, yellowgreen 33.3%, gold 0, gold 66.6%, #f06 0) no-repeat white;
-	background-size: 100% 2.1em;
+	background-size: 100% 5.5rem;
 }
 
 	.eval-overall h1::before {
@@ -577,6 +572,94 @@
 	font-family: 'Reenie Beanie', sans-serif;
 	font-weight: normal;
 }
+
+.animation {
+	position: relative;
+	height: 20vh;
+	border: solid;
+	border-width: 0 0 2px 2px;
+	margin-left: 10vw;
+	padding-top: 1px;
+	background: linear-gradient(rgba(0,0,0,.2), rgba(0,0,0,.2)) 21em 0 / 1px auto repeat-y;
+}
+
+	.animation::before {
+		content: "0s                                                                       10s";
+		position: absolute;
+		bottom: -1.5em;
+		left: -.4em;
+		white-space: pre;
+		background: linear-gradient(to right, black .3em, transparent 0) .25em 0 / 21em .3em repeat-x;
+
+	}
+
+	.animation > div {
+		position: relative;
+		z-index: -1;
+		width: 21em;
+		height: 10vh;
+		margin: 10vh 10vh 0 0;
+		background: linear-gradient(to right, gold, #f06);
+		transition: .4s margin-left;
+	}
+
+#animation-delay {
+
+}
+
+	#animation-delay h1::after {
+		content: ": 0s"
+	}
+
+	#animation-delay[data-step="1"] h1::after {
+		content: ": 1s"
+	}
+
+	#animation-delay[data-step="1"] .animation > div {
+		margin-left: 2.1em;
+	}
+
+	#animation-delay[data-step="2"] h1::after {
+		content: ": -1s"
+	}
+
+	#animation-delay[data-step="2"] .animation > div {
+		margin-left: -2.1em;
+	}
+
+	#animation-delay[data-step="3"] h1::after {
+		content: ": -4s"
+	}
+
+	#animation-delay[data-step="3"] .animation > div {
+		margin-left: -8.4em;
+	}
+
+	#animation-delay pre {
+		margin-top: 3em;
+		font-size: 90%;
+	}
+
+	#animation-delay[data-step] pre .delay::before {
+		display: inline-block;
+		padding-top: .1em;
+		margin-left: 1ch;
+		background: hsl(65, 100%, 50%);
+		mix-blend-mode: multiply;
+		line-height: 1.1;
+	}
+
+	#animation-delay[data-step="1"] pre .delay::before {
+		content: "1s";
+	}
+
+	#animation-delay[data-step="2"] pre .delay::before {
+		content: "-1s";
+	}
+
+	#animation-delay[data-step="3"] pre .delay::before {
+		content: "-4s";
+	}
 
 footer.slide {
 	text-align: center;
@@ -800,7 +883,7 @@ footer.slide {
 	#epilogue h1 {
 		background: none;
 		bottom: .1em;
-		xtransition: 2s 2.5s opacity;
+		transition: 2s 2.5s opacity;
 	}
 
 	@media (max-width: 1024px) {

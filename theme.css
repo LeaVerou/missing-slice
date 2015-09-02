@@ -64,15 +64,16 @@ textarea {
 
 	textarea:not(.bottom) {
 		padding-left: calc(1em + 8rem);
+		padding-right: 0;
 		box-shadow: .1em 0 .2em rgba(0,0,0,.3) inset;
 		font-size: 90%;
 	}
 
 	@media (max-width: 1024px) {
 		textarea:not(.bottom) {
-			width: 76%;
-			padding-left: calc(1em + 5rem);
-			font-size: 75%;
+			width: 77%;
+			padding-left: calc(1em + 6.5rem);
+			font-size: 24px;
 			tab-size: 3;
 			overflow: auto;
 		}
@@ -89,7 +90,7 @@ textarea {
 	}
 
 .slide {
-	padding: 5vmin;	
+	padding: 2.5rem;	
 	background-color: white;
 	color: black;
 }
@@ -178,4 +179,13 @@ footer.ref a {
 
 code.de-emphasize {
 	opacity: .4;
+}
+
+.hint {
+	position: absolute;
+	bottom: 0;
+	left: 10px;
+	font-size: .8rem;
+	line-height: 1;
+	color: #ccc;
 }
