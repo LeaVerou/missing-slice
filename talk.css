@@ -49,63 +49,40 @@
 			text-decoration: none;
 		}
 
-#hi {
+.hi {
 	padding: 1vmin;
-	background: hsl(336, 100%, 50%);
+	background: #f06;
 	font-size: 200%;
 }
-	
-	#hi .delayed:not(.current):not(.displayed),
+
+	.hi .delayed:not(.current):not(.displayed),
 	#csswg-announcement .delayed:not(.current):not(.displayed),
 	#contact.delayed:not(.current):not(.displayed) {
 		transform: translateY(-100vh);
 	}
-	
-	#hi .displayed {
-		opacity: 1;
-	}
-	
-	#hi p:first-of-type {
-		margin-top: .1em;
-	}
 
-	#hi p {
+	.hi p {
 		margin: 0;
 		padding-top: .5em;
 		font: 220%/1 'Reenie Beanie', sans-serif;
 	}
-	
-	#hi div > p {
-		padding-top: 0;
-	}
-	
-	#hi > p {
-		font-size: 160%;
-	}
-	
-		/*#hi p img {
-			display: block;
-			height: 2.5em;
-			margin-top: -.3em;
-		}*/
 
-	#hi figure {
-		float: left;
-		margin: 1.5em 1.5em 0 1em;
-		max-width: 45vw;
-		display: inline-block;
+	.hi figure {
+		margin: 2em auto 0;
+		width: fit-content;
+		max-height: 99vh;
 		background: white;
 		padding: 15px;
 		box-shadow: 2px 2px 30px black;
 		transform: rotate(-2deg);
 	}
 	
-		#hi figure img {
+		.hi figure img {
 			max-width: 100%;
 			object-fit: cover;
 		}
 		
-		#hi figure figcaption {
+		.hi figure figcaption {
 			display: block;
 			padding-bottom: .1em;
 			text-align: center;
@@ -114,89 +91,119 @@
 			font: 300%/.7 'Reenie Beanie', cursive;
 		}
 	
-		#hi figure img {
+		.hi figure img {
 			background: url(img/grass.svg), url(img/starburst.svg), linear-gradient(hsl(200, 84%, 85%), hsl(200, 84%, 90%));
 			background-position: 50% 200px, 0 -100px, 0 0;
 			background-repeat: repeat-x, no-repeat;
 			background-size: auto, 100% auto;
 		}
-	
-	#hi ul {
-		line-height: 1.7;
-		margin: 0;
+
+#lesbian {
+	background: url(img/greece.svg) no-repeat center / auto 90vh #f06;
+	background-origin: content-box;		
+}
+
+	#lesbian[data-step] {
+		background-size: auto 850%;
+		background-position: 67% 36%;
 	}
-	
-		#hi li {
-			display: inline;
-		}
-		
-			#hi li:before {
-				content: none;
-			}
-			
-			#hi li a {
-				display: inline-block;
-				padding: .2em .3em .25em;
-				border-radius: .2em;
-				line-height: 1;
-				text-decoration: none;
-				background: black;
-			}
-			
-			#hi li a:not(:hover) {
-				color: hsl(336, 100%, 95%);
-			}
-		
-	#csswg {
-		
-	}
-	
-		#csswg strong {
-			display: block;
-			color: white;
-			font: bold 125% Helvetica Neue, sans-serif;
-		}
-		
-	#oreilly {
+
+	#lesbian div {
 		position: absolute;
-		right: 4vmin;
-		bottom: 4vmin;
+		bottom: 1em;
+		left: 1em;
+		transition: .5s opacity;
+	}
+
+		#lesbian div p:first-of-type {
+			position: fixed;
+			top: 0;
+			font-weight: bold;
+			font-size: 300%;
+		}
+
+		#lesbian div p {
+			transition: inherit;
+			transition-property: height;
+			height: 1em;
+		}
+
+		#lesbian:not([data-step="2"]):not([data-step="3"]) > div {
+			opacity: 0
+		}
+
+			#lesbian:not([data-step="3"]) div p:last-of-type {
+				height: 0;
+				overflow: hidden;
+			}
+
+#book:target {
+	display: flex;
+}
+
+	#book a {
+		margin: auto;
 		box-shadow: 1px 1px #aab, 2px 2px #bbc, 3px 3px #99a, 4px 4px #aab, 5px 5px #889, 6px 6px #99a, 7px 7px #778, 8px 8px #889,
 		            8px 8px 10px rgba(0,0,0,.6);
 	}
 
-	p#mit {
-		display: inline-block;
-		width: 6em;
-		padding-top: 1em;
+#doing-stuff {
+	
+}
+
+	#doing-stuff > div {
+		max-width: 40vw;
+		float: left;
+		margin: 3em;
 	}
 		
-		#mit img {
-			display: block;
-			width: 80%;
-			margin-bottom: .2em;
+		.hi ul {
+			line-height: 1.7;
+			margin: 0;
 		}
+		
+			.hi li {
+				display: inline;
+			}
+			
+				.hi li:before {
+					content: none;
+				}
+				
+				.hi li a {
+					display: inline-block;
+					padding: .2em .3em .25em;
+					border-radius: .2em;
+					line-height: 1;
+					text-decoration: none;
+					background: black;
+				}
+				
+				.hi li a:not(:hover) {
+					color: hsl(336, 100%, 95%);
+				}
+			
+		#csswg {
+			
+		}
+		
+			#csswg strong {
+				display: block;
+				color: white;
+				font: bold 125% Helvetica Neue, sans-serif;
+			}
 
-@media (max-width: 1024px) {
-	#hi {
-		font-size: 180%;
-	}
-
-	#hi figure {
-		height: 84vh;
-	}
-
-	#hi figure img {
-		width: 100%;
-		height: calc(100% - 2.5em);
-	}
-
-	#oreilly {
-		right: 45vmin;
-		bottom: 10vh;
-		outline: 100vmax solid rgba(0,0,0,.5);
-	}
-}
+		p#mit {
+			display: inline-block;
+			width: 6em;
+			padding-top: 1em;
+		}
+			
+			#mit img {
+				display: block;
+				width: 80%;
+				margin-bottom: .2em;
+			}
 
 #pee {
 	color: white;
@@ -204,7 +211,7 @@
 
 #pee:target {
 	color: black;
-	transition: 15s 10s;
+	transition: 10s 5s;
 	transition-property: color, opacity;
 }
 	
@@ -429,6 +436,33 @@
 		text-align: center;
 		font-size: 600%;
 	}
+
+	
+		.eval-overall p {
+			display: block;
+			margin: auto;
+			width: 280px;
+		}
+
+		.eval-overall p.bad {
+			content: url(img/poop.png);
+		}
+
+		.eval-overall p.ok {
+			content: url(img/ok.png);
+		}
+
+		.eval-overall p.good {
+			content: url(img/good.png);
+		}
+
+		.eval-overall .super.good {
+			content: "";
+			background: url(img/good.png);
+			width: 960px;
+			height: 480px;
+		}
+	
 
 #evaluation-flexibility,
 .flexibility.slide {

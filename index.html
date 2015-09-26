@@ -8,7 +8,7 @@
 <link href="../csss/reusable.css" rel="stylesheet" />
 <link href="../prism.js/themes/prism.css" rel="stylesheet" />
 <link href="theme.css" rel="stylesheet" />
-<link href="talk.css" rel="stylesheet" data-noprefix />
+<link href="talk.css" rel="stylesheet" />
 <script src="../prefixfree/prefixfree.min.js"></script>
 <script src="../conic-gradient/conic-gradient.js"></script>
 
@@ -29,33 +29,52 @@
 	<p class="attribution">By <a href="http://lea.verou.me">Lea Verou</a> (<a href="http://twitter.com/leaverou">@LeaVerou</a>)</p>
 </header>
 
-<section class="inverse slide dont-resize darker" id="hi">
-	<figure class="delayed">
-		<img src="img/me-pirate.png" alt="Picture of me" title="Pirate illustration by Lorenzo Grandi http://www.lorenzograndi.it/" />
-		<figcaption>Hi, I’m Lea</figcaption>
-	</figure>
-	<div class="delayed">
-		<p>I make stuff</p>
-		<ul>
-			<li><a href="http://leaverou.github.io/awesomplete/">Awesomplete</a></li>
-			<li><a href="http://prismjs.com">prismjs.com</a></li>
-			<li><a href="http://dabblet.com">dabblet.com</a></li>
-			<li><a href="http://leaverou.github.io/prefixfree">-prefix-free</a></li>
-			<li><a href="http://css3test.com">css3test.com</a></li>
-		</ul>
-		<small>More: <a href="http://lea.verou.me/projects">lea.verou.me/projects</a></small>
-	</div>
-	<p class="delayed" id="csswg">
-		<strong>CSS WG</strong>
-		Invited Expert
-	</p>
-	<p id="mit" class="delayed">
-		<img src="img/mit.svg" alt="MIT" />
-		Haystack Group @ CSAIL
-	</p>
-	<a href="http://shop.oreilly.com/product/0636920031123.do" class="delayed" id="oreilly">
-		<img src="img/book.png" alt="CSS Secrets by O’Reilly" style="display:block" />
-	</a>
+<section>
+	<section class="inverse slide dont-resize darker hi">
+		<figure class="delayed">
+			<img src="img/me-pirate.png" alt="Picture of me" title="Pirate illustration by Lorenzo Grandi http://www.lorenzograndi.it/" />
+			<figcaption>Hi, I’m Lea</figcaption>
+		</figure>
+	</section>
+
+	<section class="inverse slide dont-resize darker hi" id="lesbian" data-steps="3">
+		<div>
+		<p>#funfact</p>
+		<p>I grew up in Lesbos, Greece</p>
+		<p>…which technically makes me <strong>geogrpahically Lesbian</strong></p>
+		</div>
+	</section>
+
+	<section class="inverse slide dont-resize darker hi" id="doing-stuff">
+		<div class="delayed">
+			<p>I make stuff</p>
+			<ul>
+				
+				<li><a href="http://prismjs.com">prismjs.com</a></li>
+				<li><a href="http://leaverou.github.io/prefixfree">-prefix-free</a></li>
+				<li><a href="http://dabblet.com">dabblet.com</a></li>
+				<li><a href="http://css3test.com">css3test.com</a></li>
+				<li><a href="http://cubic-bezier.com/">cubic-bezier.com</a></li>
+				<li><a href="http://leaverou.github.io/animatable/">Animatable</a></li>
+				<li><a href="http://leaverou.github.io/awesomplete/">Awesomplete</a></li>
+			</ul>
+			<small>More: <a href="http://github.com/leaverou">github.com/leaverou</a></small>
+		</div>
+		<p class="delayed" id="csswg">
+			<strong>CSS WG</strong>
+			Invited Expert
+		</p>
+		<p id="mit" class="delayed">
+			<img src="img/mit.svg" alt="MIT" />
+			Haystack Group @ CSAIL
+		</p>
+	</section>
+
+	<section class="inverse slide dont-resize darker hi" id="book">
+		<a href="http://shop.oreilly.com/product/0636920031123.do" class="delayed">
+			<img src="img/book.png" alt="CSS Secrets by O’Reilly" style="display:block" />
+		</a>
+	</section>
 </section>
 
 <section>
@@ -239,7 +258,7 @@
 			
 			<ul>
 				<li class="good"><strong>No</strong> extra elements</li>
-				<li class="bad">12 declarations</li>
+				<li class="bad">14 declarations in 4 rules</li>
 				<li class="bad">Messy &amp; hacky</li>
 			</ul>
 		</section>
@@ -279,15 +298,14 @@
 	</section>
 
 	<section class="tasty slide">
-		<p class="hint">currentColor</p>
+		<p class="hint">transparent, currentColor, turn unit, <br />animation (color 50% inherit, spin to .5turn)</p>
 		<div class="pie"></div>
 		<div class="pie over-half"></div>
 		<textarea data-subject=".pie" class="dont-resize">.pie {
 	border-radius: 50%; 
 	background: linear-gradient(
 		to right,
-		transparent 50%, gold 0)
-		#f06;
+		#f06 50%, gold 0);
 }
 
 .pie::before {
@@ -295,9 +313,9 @@
 	margin-left: 50%;
 	height: 100%;
 	border-radius:0 100% 100% 0 / 50%;
-	transform: rotate(.3turn);
+	transform: rotate(130deg);
 	transform-origin: left;
-	background-color: inherit;
+	background: #f06;
 }
 
 .pie.over-half::before {
@@ -339,7 +357,7 @@
 	<section class="slide" data-import="static-interpolation"></section>
 
 	<section class="tasty slide" id="rotated-animation">
-		<p class="hint"><s>infinite</s>, 2x iterations, inherit delay</p>
+		<p class="hint"><s>infinite</s>, 2x iterations, forwards, inherit delay</p>
 		<div class="pie"></div>
 		<textarea data-subject=".pie" class="dont-resize">.pie {
 	border-radius: 50%; 
@@ -418,7 +436,7 @@
 		
 		<ul>
 			<li class="good"><strong>No</strong> extra elements</li>
-			<li class="bad">12 declarations</li>
+			<li class="bad">15 declarations in 4 rules</li>
 			<li class="ok">Somewhat less hacky</li>
 		</ul>
 	</section>

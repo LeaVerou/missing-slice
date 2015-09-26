@@ -25,7 +25,10 @@ $$(".pie").forEach(function(slide){
 });
 
 $$('textarea').forEach(function(textarea) {
-	textarea.setAttribute('data-raw', '');
+	if (textarea.parentNode.id != "conic-test") {
+		textarea.setAttribute('data-raw', '');
+	}
+
 	new Incrementable(textarea);
 	new CSSSnippet(textarea);
 
